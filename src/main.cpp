@@ -4,6 +4,8 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 #include <Wire.h>
+
+// platformio lib install 66
 #include <HttpClient.h>
 
 #include <EEPROM.h>
