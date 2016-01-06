@@ -9,7 +9,7 @@
 #include <EEPROM.h>
 #include "utils.h"
 
-#include "gf.h"
+#include "gf.hpp"
 #include "mcp3425.hpp"
 #include "adt7410.hpp"
 #include "mpl115a.hpp"
