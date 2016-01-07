@@ -75,11 +75,13 @@ public:
 
 		for (;;) {
 			delay(1);
-			readRaw();
+			readStatus();
 			if (RDY()) {
 				break;
 			}
 		}
+
+		readRaw();
 
 		uint16_t bits = bytes[0]<<8 | bytes[1];
 		if (config.RESOLUTION == RES_13BIT) {
@@ -99,6 +101,17 @@ public:
 		if (read != 3) return -1;
 		bytes[0] = Wire.read();
 		bytes[1] = Wire.read();
+		bytes[2] = Wire.read();
+		return 0;
+	}
+
+	int readStatus() {
+		Wire.beginTransmission(address);
+		Wire.write(0x02);
+		uint8_t error = Wire.endTransmission(false);
+		if (error) return error;
+		uint8_t read = Wire.requestFrom(address, (uint8_t)1);
+		if (read != 1) return -1;
 		bytes[2] = Wire.read();
 		return 0;
 	}

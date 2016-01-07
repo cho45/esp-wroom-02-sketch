@@ -71,8 +71,8 @@ public:
 		uint16_t p_adc = Wire.read()<<8 | Wire.read();
 		uint16_t t_adc = Wire.read()<<8 | Wire.read();
 
-		Serial.print("p_adc = "); Serial.println(p_adc, HEX);
-		Serial.print("t_adc = "); Serial.println(t_adc, HEX);
+//		Serial.print("p_adc = "); Serial.println(p_adc, HEX);
+//		Serial.print("t_adc = "); Serial.println(t_adc, HEX);
 
 		p_adc >>= 6;
 		t_adc >>= 6;

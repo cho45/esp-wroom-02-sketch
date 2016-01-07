@@ -165,12 +165,12 @@ void loop() {
 	float temp = adt7410.read();
 	Serial.print("adt7410 = ");
 	Serial.println(temp);
-	gf.post("/home/test/temp", (int32_t)(temp * 1000));
+	// gf.post("/home/test/temp", (int32_t)(temp * 1000));
 
 	float hPa = mpl115a.calc_hPa();
 	Serial.print("hPa = ");
 	Serial.println(hPa);
-	gf.post("/home/test/hPa", (int32_t)(hPa * 1000));
+	// gf.post("/home/test/hPa", (int32_t)(hPa * 1000));
 
 	float adc = mcp3425.read();
 	Serial.print("mcp3425 = ");
